@@ -1,5 +1,5 @@
 # db/seeds.rb
-
+AdminUser.create!(email: 'tukuro@gmail.com', password: 'rukia2323', password_confirmation: 'rukia2323') if Rails.env.development?
 # Create Provinces
 provinces = [
   { name: 'Ontario' },
@@ -58,3 +58,4 @@ products = [
 products.each do |product|
   Product.create!(product)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

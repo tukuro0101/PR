@@ -3,7 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 gem 'pg', '~> 1.2'
-gem 'devise', '~> 4.8.0'
+gem 'activeadmin', '~> 2.9.0'
+gem 'devise', '~> 4.8'
+gem 'draper', '~> 4.0'
+gem 'arbre', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
