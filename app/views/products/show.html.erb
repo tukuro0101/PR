@@ -8,3 +8,9 @@
   <%= form.number_field :quantity, value: 1, min: 1 %>
   <%= form.submit 'Add to Cart' %>
 <% end %>
+
+<h2>Reviews</h2>
+<%= render @product.reviews %>
+
+<h2>Add a Review</h2>
+<%= render 'reviews/form', product: @product %>
