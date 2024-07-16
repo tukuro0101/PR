@@ -1,0 +1,13 @@
+<h1>My Addresses</h1>
+
+<%= link_to 'Add New Address', new_address_path %>
+
+<ul>
+  <% @addresses.each do |address| %>
+    <li>
+      <%= address.full_address %>
+      <%= link_to 'Edit', edit_address_path(address) %>
+      <%= link_to 'Delete', address_path(address), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>

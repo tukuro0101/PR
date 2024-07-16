@@ -1,0 +1,27 @@
+<h1>New Address</h1>
+
+<%= form_with model: @address, local: true do |form| %>
+  <div>
+    <%= form.label :street %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :province_id, "Province" %>
+    <%= form.collection_select :province_id, Province.all, :id, :name, prompt: 'Select Province' %>
+  </div>
+
+  <div>
+    <%= form.label :postal_code %>
+    <%= form.text_field :postal_code %>
+  </div>
+
+  <div>
+    <%= form.submit 'Save Address' %>
+  </div>
+<% end %>

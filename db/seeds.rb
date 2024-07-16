@@ -34,3 +34,27 @@ taxes = [
 taxes.each do |tax|
   Tax.create!(tax)
 end
+
+# Create Categories
+categories = [
+  { name: 'Figurines' },
+  { name: 'Posters' },
+  { name: 'Clothing' },
+  { name: 'Accessories' }
+]
+
+categories.each do |category|
+  Category.create!(category)
+end
+
+# Create Products
+products = [
+  { name: 'Naruto Figurine', description: 'High-quality Naruto figurine.', price: 29.99, stock_quantity: 10, category: Category.find_by(name: 'Figurines') },
+  { name: 'One Piece Poster', description: 'Colorful One Piece poster.', price: 9.99, stock_quantity: 20, category: Category.find_by(name: 'Posters') },
+  { name: 'Attack on Titan T-shirt', description: 'Comfortable Attack on Titan T-shirt.', price: 19.99, stock_quantity: 15, category: Category.find_by(name: 'Clothing') },
+  { name: 'Dragon Ball Keychain', description: 'Cool Dragon Ball keychain.', price: 4.99, stock_quantity: 30, category: Category.find_by(name: 'Accessories') }
+]
+
+products.each do |product|
+  Product.create!(product)
+end
