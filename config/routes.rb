@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'products#index'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -17,16 +19,15 @@ Rails.application.routes.draw do
   get 'products/index'
   get 'products/show'
 
-  Rails.application.routes.draw do
-    resources :products, only: [:index, :show]
-    resources :categories, only: [:index, :show]
-    resources :orders, only: [:new, :create, :show]
-    resource :cart, only: [:show]
-    resources :cart_items, only: [:create, :update, :destroy]
-    resources :users, only: [:new, :create, :show]
-    resource :session, only: [:new, :create, :destroy]
+  resources :products, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resources :orders, only: [:new, :create, :show]
+  resource :cart, only: [:show]
+  resources :cart_items, only: [:create, :update, :destroy]
+  resources :users, only: [:new, :create, :show]
+  resource :session, only: [:new, :create, :destroy]
 
-    root 'products#index'
-  end
+
+
 
 end
