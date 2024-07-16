@@ -1,0 +1,13 @@
+<h1>My Orders</h1>
+
+<% @orders.each do |order| %>
+  <div>
+    <h2>Order <%= order.id %></h2>
+    <p>Subtotal: <%= number_to_currency(order.subtotal) %></p>
+    <p>GST: <%= number_to_currency(order.gst) %></p>
+    <p>HST: <%= number_to_currency(order.hst) %></p>
+    <p>Total Price: <%= number_to_currency(order.total_price) %></p>
+    <p>Status: <%= order.status %></p>
+    <%= link_to 'View Order', order_path(order) %>
+  </div>
+<% end %>
